@@ -19,7 +19,7 @@ ADD config/etc/supervisor/conf.d /etc/supervisor/conf.d
 ADD config/init /init
 
 RUN mkdir -p /etc/nginx/scripts
-ADD proxy_client_ip.php /etc/nginx/scripts/proxy_client_ip.php
+ADD config/etc/nginx/proxy_client_ip.php /etc/nginx/scripts/proxy_client_ip.php
 
 VOLUME ["/var/www/owncloud/data", "/var/www/owncloud/config"]
 EXPOSE 5000
