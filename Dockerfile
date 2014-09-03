@@ -5,6 +5,8 @@ MAINTAINER Martijn van Maurik <docker@vmaurik.nl>
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABF5BD827BD9BF62
 RUN echo deb http://nginx.org/packages/mainline/ubuntu trusty nginx > /etc/apt/sources.list.d/nginx-stable-trusty.list
 
+RUN mkdir -p /var/www
+
 RUN apt-get update \
  && apt-get install -y --no-install-recommends nginx supervisor php5-fpm php5-pgsql php5-mysql php5-intl php5-gd php-xml-parser php5-curl cron smbclient \
  && apt-get clean \
@@ -12,8 +14,6 @@ RUN apt-get update \
  && cd /var/www \
  && curl -sSL https://download.owncloud.org/community/owncloud-7.0.2.tar.bz2 | tar jx \
  && chown -R www-data:www-data /var/www/owncloud
-
-RUN apt-get upgrade nginx
 
 ADD config/etc/crontab /etc/crontab
 ADD config/etc/nginx/nginx.conf /etc/nginx/nginx.conf
