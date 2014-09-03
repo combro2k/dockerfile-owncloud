@@ -29,4 +29,4 @@ ADD config/etc/nginx/proxy_client_ip.php /etc/nginx/scripts/proxy_client_ip.php
 VOLUME ["/var/www/owncloud/data", "/var/www/owncloud/config"]
 EXPOSE 5000
 
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+CMD ["/init"]
