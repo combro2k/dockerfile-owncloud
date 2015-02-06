@@ -1,5 +1,5 @@
 # Includes php-fpm, cron job support and PostgreSQL support
-FROM ubuntu:14.04
+FROM ubuntu-debootstrap:14.04
 MAINTAINER Martijn van Maurik <docker@vmaurik.nl>
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABF5BD827BD9BF62
